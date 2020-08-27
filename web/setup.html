@@ -58,6 +58,7 @@
         <ul>
       	   <li>Include the "WebGL" package</li>
         </ul>
+        <li>You may need to sign up for an "Individual" account" in order for it to give you access to the download. You can sign up for the student account later.</li>
       	<li>This will take a while and require something like 10 gigabytes of space on your computer</li>
         <li>Open Unity and create a user name and password</li>
       </ul>
@@ -96,7 +97,7 @@
     <div class="container pb-5">
       <h2 class="mt-6">Turning on static hosting so your games can be played online</h2>
       <ul>
-        <li>In you the csc470-fall2020 repository (on the github webpage), go to settings, scroll down to "GitHub Pages" and under "Source" select the master branch.</li>
+        <li>In you the csc470-fall2020 repository (on the github ***webpage***), go to settings, scroll down to "GitHub Pages" and under "Source" select the master branch.</li>
       </ul>
     </div>
 
@@ -122,6 +123,7 @@
     *.apk
     *.unitypackage
   </pre></li>
+        <li>Finally, remove the first character (the '/') in front of: /[Ll]ibrary/, /[Tt]emp/, /[Oo]bj/, /[Ll]ogs/, and /[Mm]emoryCaptures/ </li>
         <li>Save the file</li>
         <li>Finally, open Github Desktop top and commit your changes. Then, you may need to commit changes one more time. (or just push your changes to github however you know how)</li>
       </ul>
@@ -141,6 +143,10 @@
       	<li>Use plain text serialization to avoid unresolvable merge conflicts.</li>
         <ul>
       		<li>Asset Serialization / Mode: “Force Text”</li>
+        </ul>
+        <ul>
+          <li>Disable compression for your builds: Go to Edit > Project Settings, click on Player in the left of the window. Then, under Publishing Settings, Change the Compression Format to "Disabled".</li>
+          <li>Note, we only need to do this because of recent Unity changes and this is a workaround to enable you to post your games inline easily.</li>
         </ul>
         <li>Save your changes. (File > Save Project)</li>
       </ul>
