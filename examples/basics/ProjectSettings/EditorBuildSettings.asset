@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/gatorFry.unity
+    path: Assets/Scenes/titleScreen.unity
     guid: f0540ea740af74c288582676dbd20ac1
+  - enabled: 1
+    path: Assets/Scenes/level.unity
+    guid: 83c7873fe3bdf426299cbb68104355d7
   m_configObjects: {}

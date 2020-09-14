@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1661175260433581281}
   - component: {fileID: 1190946345400937090}
   - component: {fileID: 1190946345400937089}
+  - component: {fileID: 2017167318910240748}
   m_Layer: 0
-  m_Name: French_Fries_01
-  m_TagString: Untagged
+  m_Name: FryPrefab
+  m_TagString: fries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,6 +63,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.017845, y: 9.659805, z: 5.2232018}
   m_Center: {x: -0.24173737, y: 4.6048393, z: 0.028383255}
+--- !u!114 &2017167318910240748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037455199458549339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6b78a096a5649bea4e56df376c7f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseGator: 0
 --- !u!1 &7046925421993830018
 GameObject:
   m_ObjectHideFlags: 0
