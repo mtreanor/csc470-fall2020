@@ -34,8 +34,7 @@ public class PlayerController : MonoBehaviour
 		//transform.position = transform.position + transform.forward * Time.deltaTime;
 		// NOTE: We add the modifer "Space.World" to make it so that the movement
 		// works the way that we expect (i.e. using the global coordinate system).
-		transform.Translate(transform.forward * Time.deltaTime * speed, Space.World);
-		
+		transform.Translate(transform.forward * speed * Time.deltaTime);//, Space.World);		
 		
 		// --- Simulating skateboarding ---
 		// Make speed go down over time.
