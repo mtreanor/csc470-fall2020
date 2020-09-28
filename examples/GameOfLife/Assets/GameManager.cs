@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
 
 	public CellScript[,] grid;
 
+	bool simulate = true;
+
 	int gridWidth = 100;
 	int gridHeight = 100;
 
-	float cellDimension = 0.8f;
-	float padding = 0.3f;
+	float cellDimension = 1f;
+	float padding = 0.1f;
 
 	// These varaibles are used to control the rate that the grid updates itself
 	int time = 0;
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
 	{
 		timer -= Time.deltaTime;
 
-		if (timer < 0) {
+		if (timer < 0 && simulate) {
 			generateNextState();
 			
 			timer = timerRate;
@@ -106,5 +108,10 @@ public class GameManager : MonoBehaviour
 		}
 
 		return liveNeighbors;
+	}
+	
+	public void SimulateToggle(bool checkValue)
+	{
+		simulate = !simulate;
 	}
 }
