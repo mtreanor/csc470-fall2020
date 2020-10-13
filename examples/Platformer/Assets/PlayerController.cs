@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 	float yVelocity = 0;
 	float jumpForce = 0.3f;
 	float gravityModifier = 0.2f;
+
+	public MovingPlatform PlatformAttachedTo;
 	
 	// Start is called before the first frame update
 	void Start()
@@ -75,6 +77,11 @@ public class PlayerController : MonoBehaviour
 
 		//Set the amount we move in the y direction to be whatever we have gotten from simulating physics
 		amountToMove.y = yVelocity;
+
+		//If we are attached to a platform, move the amount that the platform moved.
+		if (PlatformAttachedTo != null) {
+			amountToMove += PlatformAttachedTo.DistanceMoved;
+		}
 
 		//This will move the player according to the forward vector and the yVelocity using the
 		//CharacterController.
