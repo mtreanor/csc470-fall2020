@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The course website for CSC 470 - Game Programming at American University in 2020.">
+    <meta name="author" content="Mike Treanor">
+    <title>CSC 470 - Game Programming - American University</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="../../index.html">CSC 470 - Game Programming</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../../index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#examples">Examples</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#exercises">Exercises</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#syllabus">Syllabus</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+    <!-- CONTENT -->
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">Game 5: Clicking and UI</h1>
+          <p class="lead">CSC 470 - American University</p>
+      </div>
+    </div>
+    <div class="container pb-5">
+      <h2 class="mt-6">Description</h2>
+      <p>
+        For this assignment you will explore using the mouse and user interface elements to make a game. Many genres, such as real time strategy (e.g. StarCraft), simulation (e.g. Cities: Skylines), MOBA (League of Legends), and more use this mode of interaction. While there isn't anywhere near enough time to make a full game those, you do now have the ability to make a small game like them!
+      </p>
+      <p>
+        There are two requirements for your game:
+      </p>
+      <p>
+        <ol>
+          <li>
+            <b>Create a one page "micro-design document"</b> and submit it to your 'game05' folder as README.md (use the <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown format</a>). Your design document should:
+              <ul>
+                <li>
+                  Provide a 1-2 paragraph overview of your game that describes what the goal of the game is and what it is 'about'
+                </li>
+                <li>
+                  List the technical enhancements you will need to implement/figure out that go beyond the sample project
+                </li>
+                <li>
+                  Be accessible at: http://(your git username).github.io/csc470-fall2020/exercises/game05/README.md
+                </li>
+              </ul>
+          </li>
+          <li>
+            <b>Create the game.</b> The requirements are:
+            <ul>
+              <li>It must involve selecting a GameObject and having the user interface be updated based on what GameObject is selected.</li>
+              <li>There must be a goal to your game.</li>
+              <li>There should be a title screen.</li>
+              <li>It should look significantly different than the starter project (ClickOnUnitsPlusUI.unitypackage).</li>
+              <li>The small game should demonstrate that you put some effort into its presentation. This will involve considering interface layout/composition, color choice, fonts, and more.</li>
+            </ul>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <h3 class="mt-6">Some Ideas</h3>
+        As most of these games involve "resources" (e.g. health, happiness, gold, etc.), you will need a way to represent that information. Most games do this via 'meters' that are filled to various degrees that show how much of some resource a unit has. Given that you have that, we could then imagine all sorts of games:
+        <ul>
+          <li>
+            Have two types of units, and make it so a unit's happiness meter is lowered when inslulted, and filled when they are complimented. The game is about keeping your team happy and making the other team unhappy.
+          </li>
+          <li>
+            Create an object that units can "mine". For example, when a unit is near the gold mine, have a meter fill. When it is full, have the unit be able to "drop off" gold at some home base. When homebase has enough gold, allow the player to place a new building or something.
+          </li>
+          <li>
+            Have the player control one unit and have them need to fight off waves of enemies using special attacks that you select via the UI. In this case you would need meters to represent health.
+          </li>
+          <li>
+            Have the player be able to place various types of buildings or zones on a grid. Have the placed areas update their stats over time based on the distance from the various other types of placed buildings.
+          </li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="container pb-5">
+      <h2 class="mt-6">A Simple Example</h2>
+      <p>
+        Feel free to start from this code, but you won't get very far with the assignment if you don't understand it, so look it over carefully.
+      </p>
+      <a href="https://github.com/mtreanor/csc470-fall2020/tree/master/examples/ClickOnUnits" class="btn btn-primary">CODE</a>
+      <a href="http://mtreanor.com/csc470-fall2020/examples/ClickOnUnits/web/" class="btn btn-primary">PLAY </a>
+    </div>
+
+    <div class="container pb-5">
+      <h2 class="mt-6">Building your Project for the Web</h2>
+      <p>
+        <ul>
+          <li>Open the Build Settings (File > Build Settings...)</li>
+          <li>Click the Add Open Scenes button</li>
+          <li>Select "WebGL" and then click the "Switch Platform" button</li>
+          <li>Remember to disable Compression in Project Settings->Player!</li>
+          <li>Click the "Build" button</li>
+          <li>
+            When it asks you where you want to put your build, create a folder titled "web" in your game05 folder.
+            Once you do this, it will take several minutes to build your game.
+          </li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="container pb-5">
+      <h2 class="mt-6">Submission</h2>
+      <p>
+        Submit your project to github. Make sure your Unity project is titled "game05"
+        and located in the "exercises" folder of your local github repository. To push it up
+        to github, open Github Desktop, commit your changes (you need to enter a comment in the field on the bottom left of the screen),
+        and click the "Push origin" button near the top middle of the screen.
+      </p>
+      <p>
+        If everything worked, you should be able to play your game by going to:<br>
+        <br>
+        http://(your git username).github.io/csc470-fall2020/exercises/game05/web
+      </p>
+    </div>
+  </body>
+</html>

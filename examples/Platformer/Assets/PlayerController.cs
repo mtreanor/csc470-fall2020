@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
 	public CharacterController cc;
 
-	bool prevIsGrounded = false;
+	bool prevIsGrounded = true;
 
 	float yVelocity = 0;
 	float jumpForce = 0.3f;
