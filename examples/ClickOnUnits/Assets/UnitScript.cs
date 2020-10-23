@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class UnitScript : MonoBehaviour
 {
+	GameManager gm;
+
+	public string name;
+
 	// How fast the Unit will move forward.
 	float speed = 5f;
 	// How fast the Unit will rotate toward its targetPosition.
@@ -35,6 +39,8 @@ public class UnitScript : MonoBehaviour
 		// Initialize the targetPosition so that the Unit is initially close enough to its target to not want
 		// to move and rotate toward it.
 		targetPosition = transform.position;
+
+		gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -59,6 +65,8 @@ public class UnitScript : MonoBehaviour
 						// be the point on the ground that the player clicked on.
 						targetPosition = hit.point;
 					}
+				} else {
+					gm.SelectUnit(null);
 				}
 			}
 		}
@@ -108,6 +116,9 @@ public class UnitScript : MonoBehaviour
 	private void OnMouseDown()
 	{
 		selected = !selected;
-		UpdateVisuals();
+		// If after clicking the unit is selected, tell the GameManager to select it.
+		if (selected) {
+			gm.SelectUnit(this);
+		}
 	}
 }
