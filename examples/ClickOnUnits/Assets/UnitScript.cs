@@ -7,9 +7,13 @@ public class UnitScript : MonoBehaviour
 {
 	GameManager gm;
 
+	public Animator anim;
+
 	public string unitName;
 	public int health = 100;
 	public int charisma;
+
+	float miningPower = 0f;
 
 	// When the unit is selected, and the player clicks on the ground, it will instantiate a cube and add it to this
 	// list. When the player presses the "Go!" button, the unit will start moving toward the first cube. When it
@@ -23,7 +27,7 @@ public class UnitScript : MonoBehaviour
 	float speed = 5f;
 	// How fast the Unit will rotate toward its targetPosition.
 	float rotateSpeed = 4f;
-	
+
 	// Units will always rotate toward this position unless they are already close to it.
 	Vector3 targetPosition;
 
@@ -55,7 +59,12 @@ public class UnitScript : MonoBehaviour
 
 		gm = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
 	}
-	
+
+	void bossAttack()
+	{
+
+	}
+
 	// Update is called once per frame
 	void Update()
 	{
@@ -67,7 +76,7 @@ public class UnitScript : MonoBehaviour
 			// selected or deselected.
 			if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) {
 				// We will get in here if the Unit is selected, and the player has clicked the mouse.
-				
+
 				// The following code create's a "ray" at the position that the mouse is on the screen, and performs
 				// a Raycast. This is a Physics utility function that will move in a direction and populate the 
 				// values of a RaycastHit object if something was hit. If the Raycast doesn't hit anything (i.e. the
@@ -80,12 +89,12 @@ public class UnitScript : MonoBehaviour
 					// Check to see if what we clicked on the the "Ground" via this layer check.
 					if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground")) {
 						// If we get in here, the raycast has hit the ground. 
-						
+
 						// Spawn a cube, and store it in a list. These will be the "waypoints" that the unit will walk toward
 						// when the player clicks the "Go!" button.
 						GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
 						// Remove the default box collider that gets added when we use CreatePrimitive.
-						Destroy(obj.GetComponent<BoxCollider>()); 
+						Destroy(obj.GetComponent<BoxCollider>());
 						obj.transform.position = hit.point;
 						path.Add(obj);
 					}
@@ -105,7 +114,7 @@ public class UnitScript : MonoBehaviour
 
 			Vector3 newDirection = Vector3.RotateTowards(transform.forward, vectorToTarget, step, 1);
 			transform.rotation = Quaternion.LookRotation(newDirection);
-			
+
 			cc.Move(transform.forward * speed * Time.deltaTime);
 		} else {
 			if (moving && path.Count > 0) {
@@ -114,7 +123,7 @@ public class UnitScript : MonoBehaviour
 				if (pathIndex == path.Count) {
 					// If we get in here, we have arrived at the last target. In that case, stop moving, and destroy all the
 					// path markers.
-					foreach(GameObject pathObj in path) {
+					foreach (GameObject pathObj in path) {
 						Destroy(pathObj);
 					}
 					path = new List<GameObject>();
@@ -126,7 +135,7 @@ public class UnitScript : MonoBehaviour
 			}
 		}
 	}
-	
+
 	public void StartFollowingPath()
 	{
 		pathIndex = 0;
@@ -153,18 +162,24 @@ public class UnitScript : MonoBehaviour
 
 	private void OnMouseEnter()
 	{
+		gm.PositionAboveHeadNamePanel(this);
+
 		hover = true;
 		UpdateVisuals();
 	}
-	
+
 	private void OnMouseExit()
 	{
+		gm.TurnOffAboveHeadNamePanel();
+
 		hover = false;
 		UpdateVisuals();
 	}
 
 	private void OnMouseDown()
 	{
+		anim.SetTrigger("damaged");
+
 		selected = !selected;
 		// If after clicking the unit is selected, tell the GameManager to select it.
 		if (selected) {

@@ -12,23 +12,40 @@ public class GameManager : MonoBehaviour
 	public MeterScript healthMeter;
 	public MeterScript charismaMeter;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public GameObject aboveHeadNamePanel;
+	public Text aboveHeadNameText;
 
-    // Update is called once per frame
-    void Update()
-    {
+	public GameObject unitPrefab;
+
+	// Start is called before the first frame update
+	void Start()
+	{
 
 	}
-    
-    public void GoButtonClicked()
+
+	// Update is called once per frame
+	void Update()
+	{
+
+	}
+
+	public void GoButtonClicked()
 	{
 		if (selectedUnit != null) {
 			selectedUnit.StartFollowingPath();
 		}
+	}
+
+	public void PositionAboveHeadNamePanel(UnitScript unit)
+	{
+		Vector3 pos = unit.gameObject.transform.position + Vector3.up * 2;
+		aboveHeadNameText.text = unit.unitName;
+		aboveHeadNamePanel.SetActive(true);
+		aboveHeadNamePanel.transform.position = Camera.main.WorldToScreenPoint(pos);
+	}
+	public void TurnOffAboveHeadNamePanel()
+	{
+		aboveHeadNamePanel.SetActive(false);
 	}
 
 	// This function takes a Unit's UnitScript, makes it selected, and deselects any other units that were selected.
@@ -38,7 +55,7 @@ public class GameManager : MonoBehaviour
 	public void SelectUnit(UnitScript toSelect)
 	{
 		selectedUnit = toSelect;
-	
+
 		// Get an array of all GameObjects that have the tag "Unit".
 		GameObject[] units = GameObject.FindGameObjectsWithTag("Unit");
 		// Loop through all units and make sure they are not selected.
@@ -47,14 +64,14 @@ public class GameManager : MonoBehaviour
 			unitScript.selected = false;
 			unitScript.UpdateVisuals();
 		}
-		
-		
+
+
 		if (toSelect != null) {
 			// If there is a selected, mark it as selected, update its visuals, and update the UI elements.
 			selectedUnit.selected = true;
 
 			UpdateUI(selectedUnit);
-			
+
 			selectedUnit.UpdateVisuals();
 		} else {
 			// If we get in here, it means that the toSelect parameter was null, and that means that we 
@@ -62,7 +79,7 @@ public class GameManager : MonoBehaviour
 			namePanel.SetActive(false);
 		}
 	}
-	
+
 	public void UpdateUI(UnitScript unit)
 	{
 		healthMeter.SetMeter(unit.health / 100f);
