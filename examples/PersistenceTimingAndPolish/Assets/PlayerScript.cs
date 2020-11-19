@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerScript : MonoBehaviour
 	{
 		StartCoroutine(modifyMoveSpeed());
 	}
+
 
 	// Update is called once per frame
 	void Update()
