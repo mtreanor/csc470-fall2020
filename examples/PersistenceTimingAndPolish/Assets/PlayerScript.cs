@@ -8,6 +8,10 @@ public class PlayerScript : MonoBehaviour
 {
 	public CharacterController cc;
 	float moveSpeed = 5f;
+	float rotateSpeed = 90f;
+
+	public enum STATES { DEFAULT, DAMAGED, ATTACKING };
+	public STATES state;
 
 	public MeterScript meter;
 	int health = 100;
@@ -15,38 +19,42 @@ public class PlayerScript : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		StartCoroutine(modifyMoveSpeed());
+
 	}
 
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			SceneManager.LoadScene("Level1");
-		}
+		//switch (state) {
+		//	case STATES.DEFAULT:
+		//		break;
+		//	case STATES.ATTACKING:
+		//		attack();
+		//		break;
+		//	case STATES.DAMAGED:
+		//		damaged();
+		//		break;
+		//	default:
+		//		break;
+		//}
 
-		if (Input.GetKeyDown(KeyCode.S)) {
-			GameManager.instance.score++;
-			Debug.Log(GameManager.instance.score);
-			PlayerPrefs.SetInt("score", GameManager.instance.score);
-		}
+		if (GameManager.instance.mode == GameManager.MODES.GAMEPLAY) {
 
-		cc.Move(transform.forward * moveSpeed * Time.deltaTime);
+			float hAxis = Input.GetAxis("Horizontal");
+			float vAxis = Input.GetAxis("Vertical");
 
+			transform.Rotate(0, hAxis * rotateSpeed * Time.deltaTime, 0);
 
-		if (Input.GetKeyDown(KeyCode.M)) {
-			health -= 10;
-			meter.SetMeter(health / 100f);
+			cc.Move(transform.forward * vAxis * moveSpeed * Time.deltaTime);
 		}
 	}
 
-
-	IEnumerator modifyMoveSpeed()
+	private void OnTriggerEnter(Collider other)
 	{
-		while (true) {
-			moveSpeed *= -1;
-			yield return new WaitForSeconds(1);
+		if (other.gameObject.CompareTag("Enemy")) {
+			health -= 10;
+			meter.SetMeter(health / 100f);
 		}
 	}
 }

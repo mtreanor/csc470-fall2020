@@ -6,7 +6,12 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+	public Dropdown dropdown;
+
 	public static GameManager instance;
+
+	public enum MODES { FADING, GAMEPLAY, TEXTBOX };
+	public MODES mode;
 
 	public TMP_Text textboxText;
 	public GameObject textbox;
@@ -35,6 +40,7 @@ public class GameManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		mode = MODES.FADING;
 		fadeCoroutine = StartCoroutine(fadeIn());
 	}
 
@@ -75,11 +81,13 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator introTextSequence()
 	{
+		mode = MODES.TEXTBOX;
+
 		textbox.SetActive(true);
 		textboxText.text = textEntries[0];
 		int count = 0;
 		while (count < textEntries.Length) {
-			if (Input.GetKeyDown(KeyCode.T)) {
+			if (Input.GetKeyDown(KeyCode.Space)) {
 				count++;
 				if (count < textEntries.Length) {
 					textboxText.text = textEntries[count];
@@ -88,5 +96,7 @@ public class GameManager : MonoBehaviour
 			yield return null;
 		}
 		textbox.SetActive(false);
+
+		mode = MODES.GAMEPLAY;
 	}
 }
