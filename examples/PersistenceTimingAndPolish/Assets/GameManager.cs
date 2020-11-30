@@ -47,15 +47,7 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.I)) {
-			StopCoroutine(fadeCoroutine);
-			fadeCoroutine = StartCoroutine(fadeIn());
-		}
 
-		if (Input.GetKeyDown(KeyCode.O)) {
-			StopCoroutine(fadeCoroutine);
-			fadeCoroutine = StartCoroutine(fadeOut());
-		}
 	}
 
 

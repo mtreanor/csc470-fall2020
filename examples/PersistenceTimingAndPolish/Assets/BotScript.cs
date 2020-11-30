@@ -8,8 +8,6 @@ public class BotScript : MonoBehaviour
 {
 	public NavMeshAgent agent;
 
-
-
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -29,6 +27,13 @@ public class BotScript : MonoBehaviour
 			agent.SetDestination(pos);
 
 			yield return new WaitForSeconds(4);
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("attack")) {
+			Destroy(gameObject);
 		}
 	}
 }
