@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The course website for CSC 470 - Game Programming at American University in 2020.">
+    <meta name="author" content="Mike Treanor">
+    <title>CSC 470 - Game Programming - American University</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="../../index.html">CSC 470 - Game Programming</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../../index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#examples">Examples</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#exercises">Exercises</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#syllabus">Syllabus</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+    <!-- CONTENT -->
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">Game 4: Flight Simulator OR Platformer OR Both!?!</h1>
+          <h2 class="mt-5">Due 10/15/20</h2>
+          <p class="lead">CSC 470 - American University</p>
+      </div>
+    </div>
+    <div class="container pb-5">
+      <h2 class="mt-6">Description</h2>
+      <p>
+        For this game, your grade depends on your ambition! For a B, you have a choice of either creating a flight simulator, or a platformer (details below).
+      </p>
+      <p>
+        BUT, if you want an A, you need to make a game where you can do BOTH! For example, when the plane "lands", the player will "hop" out of the plane and have some task to complete.
+      </p>
+      <h3>Flight Simulator</h3>
+      <p>
+        While you are free to use my example code for to get you started, you will need to significantly enhance it.
+        Here are some ideas of stuff to add (but feel free to come up with your own):
+        <ul>
+          <li>Build a world out of models from google poly?</li>
+          <li>Have something interesting happen when you fly through rings?</li>
+          <li>Have a fuel meter that decreases as you fly?</li>
+          <li>Collect fuel to fill it back up?</li>
+          <li>Flying enemies that chase you and shoot at you?</li>
+        </ul>
+      </p>
+      <h3>Platformer</h3>
+      <p>
+        Again, you can use my code to get you started, but you need to add significantly to it in order to get a good grade.
+        Here are some ideas of stuff to add (but feel free to come up with your own):
+        <ul>
+          <li>Make "houses" that you can go in using ProBuilder</li>
+          <li>Make it so you need to collect a "key" in order to unlock a door to win the game</li>
+          <li>Have collectable ammunition and some sort of projectile</li>
+          <li>Cool jumps (double jump, wall jump, rocket packs)</li>
+          <li>Stomp on enemies to defeat them?</li>
+        </ul>
+      </p>
+      <h3>BOTH!?!</h3>
+      Again, in order to get an A on this assignment, you will need to make a game that has both flight simulator and platforming elements.
+    </div>
+
+    <div class="container pb-5">
+      <h2 class="mt-6">Flight Simulator Sample Project</h2>
+      <p>
+        Feel free to start from this code, but you won't get very far with the assignment if you don't understand it, so look it over carefully.
+      </p>
+      <a href="https://github.com/mtreanor/csc470-fall2020/tree/master/examples/Flight" class="btn btn-primary">CODE</a>
+      <a href="http://mtreanor.com/csc470-fall2020/examples/Flight/web/" class="btn btn-primary">PLAY </a>
+    </div>
+    <div class="container pb-5">
+      <h2 class="mt-6">Platformer Sample Project</h2>
+      <p>
+        Feel free to start from this code, but you won't get very far with the assignment if you don't understand it, so look it over carefully.
+      </p>
+      <a href="https://github.com/mtreanor/csc470-fall2020/tree/master/examples/Platformer" class="btn btn-primary">CODE</a>
+      <a href="http://mtreanor.com/csc470-fall2020/examples/Platformer/web/" class="btn btn-primary">PLAY </a>
+    </div>
+
+    <div class="container pb-5">
+      <h2 class="mt-6">Building your Project for the Web</h2>
+      <p>
+        <ul>
+          <li>Open the Build Settings (File > Build Settings...)</li>
+          <li>Click the Add Open Scenes button</li>
+          <li>Select "WebGL" and then click the "Switch Platform" button</li>
+          <li>Remember to disable Compression in Project Settings->Player!</li>
+          <li>Click the "Build" button</li>
+          <li>
+            When it asks you where you want to put your build, create a folder titled "web" in your game04 folder.
+            Once you do this, it will take several minutes to build your game.
+          </li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="container pb-5">
+      <h2 class="mt-6">Submission</h2>
+      <p>
+        Submit your project to github. Make sure your Unity project is titled "game04"
+        and located in the "exercises" folder of your local github repository. To push it up
+        to github, open Github Desktop, commit your changes (you need to enter a comment in the field on the bottom left of the screen),
+        and click the "Push origin" button near the top middle of the screen.
+      </p>
+      <p>
+        If everything worked, you should be able to play your game by going to:<br>
+        <br>
+        http://(your git username).github.io/csc470-fall2020/exercises/game04/web
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,70 +1,257 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | PersistenceTimingAndPolish</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The course website for CSC 470/670 - Game Programming at American University in Fall 2020.">
+    <meta name="author" content="Mike Treanor">
+    <title>CSC 470/670 - Game Programming - American University</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">CSC 470/670 - Game Programming</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#examples">Examples</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#exercises">Exercises</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#syllabus">Syllabus</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">PersistenceTimingAndPolish</div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">CSC 470/670 - Game Programming!</h1>
+          <p class="lead">Learn how to make games using the Unity Game Engine.</p>
+          <p class="lead">Instructor <a href="http://mtreanor.com">Mike Treanor</a></p>
       </div>
     </div>
-    <script>
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/web.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/web.data",
-        frameworkUrl: buildUrl + "/web.framework.js",
-        codeUrl: buildUrl + "/web.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "PersistenceTimingAndPolish",
-        productVersion: "0.1",
-      };
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        config.devicePixelRatio = 1;
-      } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-      loadingBar.style.display = "block";
+    <!-- Examples -->
+    <div id="examples" class="container pb-5">
+      <h1 class="mt-6">Examples</h1>
+      <p class="lead">Most examples from class will be annotated and posted here.
+        Remember to look carefully at the comments in the code. To quickly look at
+        the code, just look through the Unity project in the GitHub repository.
+        To integrate the project into another Unity project, download and import the .unitypackage file. In your own Unity project, go to Assets > Import Package > Custom Package...
+      </p>
+      <div class="container">
+        <div class="row justify-content-md-left">
+          <!--START EXAMPLE-->
+          <div class="card col-md-4" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <code>9/14/20</code>
+              <h5 class="card-title">The Basics</h5>
+              <p class="card-text">
+                <p>Skateboarding gator gets fries.</p>
+                <p>
+                  This covers everything listed <a href="exercises/01/index.html#topics">here</a>
+                </p>
+              </p>
+              <a href="https://github.com/mtreanor/csc470-fall2020/blob/master/examples/basics/" class="btn btn-primary">CODE</a>
+              <a href="http://mtreanor.com/csc470-fall2020/examples/basics/web/" class="btn btn-primary">PLAY</a>
+            </div>
+          </div>
+          <!--END EXAMPLE-->
+          <!--START EXAMPLE-->
+          <div class="card col-md-4" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <code>9/21/20</code>
+              <h5 class="card-title">Game of Life</h5>
+              <p class="card-text">
+                <p>Instantiating prefabs</p>
+                <p>Changing colors in code</p>
+                <p>Two dimensional arrays</p>
+                <p>Creating emergence</p>
+                <p>Using a "Game Manager" to manage game state</p>
+              </p>
+              <a href="https://github.com/mtreanor/csc470-fall2020/tree/master/examples/GameOfLife" class="btn btn-primary">CODE</a>
+              <a href="http://mtreanor.com/csc470-fall2020/examples/GameOfLife/web/" class="btn btn-primary">PLAY</a>
+            </div>
+          </div>
+          <!--END EXAMPLE-->
+          <!--START EXAMPLE-->
+          <div class="card col-md-4" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <code>10/5/20</code>
+              <h5 class="card-title">Flight Simulator</h5>
+              <p class="card-text">
+                <p>Creating nuanced controls</p>
+                <p>Instantiating prefabs</p>
+                <p>Terrains</p>
+                <p>Generating and positioning 100's of objects in the world</p>
+              </p>
+              <a href="https://github.com/mtreanor/csc470-fall2020/tree/master/examples/Flight" class="btn btn-primary">CODE</a>
+              <a href="http://mtreanor.com/csc470-fall2020/examples/Flight/web/" class="btn btn-primary">PLAY</a>
+            </div>
+          </div>
+          <!--END EXAMPLE-->
+          <!--START EXAMPLE-->
+          <div class="card col-md-4" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <code>10/8/20</code>
+              <h5 class="card-title">3D Platformer</h5>
+              <p class="card-text">
+                <p>Simulating gravity</p>
+                <p>Nuanced platformer controls</p>
+                <p>ProBuilder for non-primitive shapes</p>
+                <p>Using CharacterController</p>
+              </p>
+              <a href="https://github.com/mtreanor/csc470-fall2020/tree/master/examples/Platformer" class="btn btn-primary">CODE</a>
+              <a href="http://mtreanor.com/csc470-fall2020/examples/Platformer/web/" class="btn btn-primary">PLAY</a>
+            </div>
+          </div>
+          <!--END EXAMPLE-->
+          <!--START EXAMPLE-->
+          <div class="card col-md-4" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <code>10/19/20</code>
+              <h5 class="card-title">Clicking on 'Units' and moving them</h5>
+              <p class="card-text">
+                <ul>
+                  <li>Mouse interaction with GameObjects via OnMouseXXX functions</li>
+                  <li>Raycasting from the mouse position to recognize what was 'under the mouse'</li>
+                  <li>Positioning UI elements based on world positions</li>
+                  <li>Orthographic projection with the camera</li>
+                  <li>Rotating a game object towards a point over time</li>
+                  <li>Making a Meter on the UI that represents a unit's health</li>
+                  <li>A "waypoint" system where the player can place markers and then tell the unit to follow them in order.</li>
+                  <!-- <li>Toggle buttons</li>
+                  <li>LayoutGroups</li>
+                  <li>Basic Coroutines</li>
+                  <li>Using a ParticleSystem to create a 'falling leaf' effect</li>
+                  <li>Basic animations (idle/walk) and transitions using the Animator</li> -->
+                </ul>
+              </p>
+              <a href="https://github.com/mtreanor/csc470-fall2020/tree/master/examples/ClickOnUnits/" class="btn btn-primary">CODE</a>
+              <a href="http://mtreanor.com/csc470-fall2020/examples/ClickOnUnits/web/" class="btn btn-primary">PLAY</a>
+            </div>
+          </div>
+          <!--END EXAMPLE-->
+          <!--START EXAMPLE-->
+          <div class="card col-md-4" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <code>11/16/20</code>
+              <h5 class="card-title">Persistence, Singleton, Timing, and Polish</h5>
+              <p class="card-text">
+                <ul>
+                  <li>Singleton pattern and DontDestroyOnLoad</li>
+                  <li>Simple saving of game state across plays with PlayerPrefs</li>
+                  <li>Coroutines</li>
+                  <li>Creating sequences of text</li>
+                  <li>Enhanced meter</li>
+                </ul>
+              </p>
+              <a href="https://github.com/mtreanor/csc470-fall2020/tree/master/examples/PersistenceTimingAndPolish/" class="btn btn-primary">CODE</a>
+              <!-- <a href="http://mtreanor.com/csc470-fall2020/examples/ClickOnUnits/web/" class="btn btn-primary">PLAY</a> -->
+            </div>
+          </div>
+          <!--END EXAMPLE-->
+        </div>
+      </div>
+    </div>
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
+
+    <div id="exercises" class="container pb-5">
+      <h1 class="mt-6">Exercises</h1>
+      <p class="lead">All exercises are designed to allow you to demonstrate proficiency in various aspects of game programming. As you code, you should also adhere to the code standards demonstrated in the examples, and that I demonstrate in class.</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Title</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">0</th>
+            <td>8/31/20</td>
+            <td>Roll a Ball</td>
+            <td><a href="https://learn.unity.com/project/roll-a-ball">link</a></td>
+          </tr>
+          <tr>
+            <th scope="row">1.1</th>
+            <td>8/31/20</td>
+            <td>Setting up your development environment with Unity and Github</td>
+            <td><a href="setup.html">Setup Instructions</a></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>9/18/20</td>
+            <td>Make a small game with 3d models that demonstrates your understanding of the basics.</td>
+            <td><a href="./exercises/02">link</a></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>10/1/20</td>
+            <td>Game 3: Game of Life: The Game</td>
+            <td><a href="exercises/03/index.html">link</a></td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>10/15/20</td>
+            <td>Game 4: Flight Simulator OR Platformer OR BOTH!?!</td>
+            <td><a href="exercises/04/index.html">link</a></td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>11/9/20</td>
+            <td>Game 5: Clicking and UI</td>
+            <td><a href="exercises/05/index.html">link</a></td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>(multiple due dates)</td>
+            <td>Final</td>
+            <td><a href="exercises/final/index.html">link</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="syllabus" class="container pb-5">
+      <h1 class="mt-6"><a href="https://docs.google.com/document/d/11Sq5y6nidCm_BdDTlbGvQbt7EEW6s8JvSu0tSF0l3ms/edit?usp=sharing">Syllabus</a></h1>
+      <h1 class="mt-6">Office Hours</h2>
+      <h3 class="mt-6">Thursday 1-2:30pm</h3>
+      <!-- <h3 class="mt-6"><a href="https://american.zoom.us/j/2694428370">Zoom link</a></h3> -->
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   </body>
+
 </html>
